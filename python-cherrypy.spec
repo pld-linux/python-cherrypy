@@ -3,7 +3,7 @@
 %define		_rc	b
 
 Summary:	A pythonic, object-oriented web development framework
-#Summary(pl):
+Summary(pl):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
 Name:		python-%{module}
 Version:	2.0.0
 Release:	0%{_rc}.1
@@ -30,18 +30,32 @@ the simplest ones to the most demanding ones.
 
 Oh, and most importantly: CherryPy is fun to work with :-)
 
-#%description -l pl
+%description -l pl
+CherryPy to pythonowy, obiektowo zorientowany szkielet do tworzenia
+WWW.
+
+CherryPy pozwala programistom tworzyæ aplikacje WWW w sposób bardzo
+podobny do tworzenia ka¿dego innego obiektowo zorientowanego programu
+w Pythonie. Wynikiem tego jest zwykle mniejszy kod ¼ród³owy stworzony
+w krótszym czasie.
+
+CherryPy ma ju¿ nieco ponad trzy lata i okaza³ siê byæ bardzo szybki i
+stabilny. Jest u¿ywany produkcyjnie przez wiele serwisów, od
+najprostszych do bardziej wymagaj±cych.
+
+I najwa¿niejsze - praca z CherryPy jest zabaw± :-)
 
 %package examples
 Summary:	Example files for CherryPy
-#Summary(pl):
+Summary(pl):	Pliki przyk³adów dla CherryPy
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 
 %description examples
-Example files for CherryPy
+Example files for CherryPy.
 
-#%description examples -l pl
+%description examples -l pl
+Pliki przyk³adów dla CherryPy.
 
 %prep
 %setup -q -n %{fname}-%{version}%{_rc}
