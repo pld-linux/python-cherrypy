@@ -9,7 +9,7 @@ Version:	2.0.0
 Release:	0%{_rc}.1
 License:	BSD
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/%{module}/%{fname}-%{version}%{_rc}.tar.gz
+Source0:	http://dl.sourceforge.net/cherrypy/%{fname}-%{version}%{_rc}.tar.gz
 # Source0-md5:	1a7822256854f67ab1b3def7923d9920
 URL:		http://www.cherrypy.org
 BuildRequires:	python
