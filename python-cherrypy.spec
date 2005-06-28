@@ -1,16 +1,15 @@
 %define 	fname	CherryPy
 %define		module	%(echo %{fname} | tr A-Z a-z)
-%define		_rc	b
 
 Summary:	A pythonic, object-oriented web development framework
 Summary(pl):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
 Name:		python-%{module}
 Version:	2.0.0
-Release:	0%{_rc}.1
+Release:	1
 License:	BSD
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/cherrypy/%{fname}-%{version}%{_rc}.tar.gz
-# Source0-md5:	1a7822256854f67ab1b3def7923d9920
+Source0:	http://dl.sourceforge.net/cherrypy/%{fname}-%{version}.tar.gz
+# Source0-md5:	1e244a9728717199418f8a24a78a3a3e
 URL:		http://www.cherrypy.org
 BuildRequires:	python
 %pyrequires_eq	python-modules
@@ -58,7 +57,7 @@ Example files for CherryPy.
 Pliki przyk³adów dla CherryPy.
 
 %prep
-%setup -q -n %{fname}-%{version}%{_rc}
+%setup -q -n %{fname}-%{version}
 
 %build
 python setup.py build
