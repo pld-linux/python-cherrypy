@@ -1,5 +1,5 @@
 %define 	fname	CherryPy
-%define		module	%(echo %{fname} | tr A-Z a-z)
+%define		module	cherrypy
 
 Summary:	A pythonic, object-oriented web development framework
 Summary(pl):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
