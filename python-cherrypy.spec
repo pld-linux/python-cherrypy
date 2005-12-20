@@ -68,6 +68,7 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install -d $RPM_BUILD_ROOT%{py_sitescriptdir}/CherryPy-%{version}-py%{py_ver}.egg-info
 
 python setup.py install \
 	--root=$RPM_BUILD_ROOT \
@@ -79,6 +80,13 @@ find $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/ -name \*.py | xargs rm -f
 
 cp -r cherrypy/tutorial $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+echo 'Metadata-Version: 1.0
+Name: CherryPy
+Version: %{version}
+Summary: %{summary}
+Home-page: %{url}
+License: %{license}' > $RPM_BUILD_ROOT%{py_sitescriptdir}/CherryPy-%{version}-py%{py_ver}.egg-info/PKG-INFO
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -86,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG.txt CHERRYPYTEAM.txt README.txt
 %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/CherryPy*
 
 %files examples
 %defattr(644,root,root,755)
