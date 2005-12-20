@@ -1,0 +1,12 @@
+diff -ur CherryPy-2.1.0.org/cherrypy/lib/autoreload.py CherryPy-2.1.0/cherrypy/lib/autoreload.py
+--- CherryPy-2.1.0.org/cherrypy/lib/autoreload.py	2005-10-05 12:52:00.000000000 +0200
++++ CherryPy-2.1.0/cherrypy/lib/autoreload.py	2005-12-20 01:04:06.000000000 +0100
+@@ -18,7 +18,7 @@
+     while RUN_RELOADER:
+         for filename in map(fileattr, sys.modules.values()) + reloadFiles:
+             if filename:
+-                if filename.endswith(".pyc"):
++		if filename.endswith(".pyc") and os.path.exists(filename[:-1]):
+                     filename = filename[:-1]
+                 try:
+                     mtime = os.stat(filename).st_mtime
