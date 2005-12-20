@@ -10,6 +10,7 @@ License:	BSD
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/cherrypy/%{fname}-%{version}.tar.gz
 # Source0-md5:	10bd559bdfdf783101d83335dd8acf58
+Patch0:		%{name}-autoreload.patch
 URL:		http://www.cherrypy.org
 BuildRequires:	python
 %pyrequires_eq	python-modules
@@ -59,6 +60,7 @@ Pliki przyk³adów dla CherryPy.
 
 %prep
 %setup -q -n %{fname}-%{version}
+%patch0 -p1
 
 %build
 python setup.py build
