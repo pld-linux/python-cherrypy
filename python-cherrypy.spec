@@ -2,17 +2,17 @@
 %define		module	cherrypy
 #
 Summary:	A pythonic, object-oriented web development framework
-Summary(pl):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
+Summary(pl.UTF-8):   Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
 Name:		python-%{module}
 Version:	2.2.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/cherrypy/%{fname}-%{version}.tar.gz
 # Source0-md5:	14bf17b0706bc480342cb8fcfaed74cd
 Patch0:		%{name}-autoreload.patch
 URL:		http://www.cherrypy.org
-BuildRequires:	python
+BuildRequires:	python >= 1:2.5
 %pyrequires_eq	python-modules
 Requires:	python-devel-tools
 BuildArch:	noarch
@@ -31,32 +31,32 @@ the simplest ones to the most demanding ones.
 
 Oh, and most importantly: CherryPy is fun to work with :-)
 
-%description -l pl
+%description -l pl.UTF-8
 CherryPy to pythonowy, obiektowo zorientowany szkielet do tworzenia
 WWW.
 
-CherryPy pozwala programistom tworzyæ aplikacje WWW w sposób bardzo
-podobny do tworzenia ka¿dego innego obiektowo zorientowanego programu
-w Pythonie. Wynikiem tego jest zwykle mniejszy kod ¼ród³owy stworzony
-w krótszym czasie.
+CherryPy pozwala programistom tworzyÄ‡ aplikacje WWW w sposÃ³b bardzo
+podobny do tworzenia kaÅ¼dego innego obiektowo zorientowanego programu
+w Pythonie. Wynikiem tego jest zwykle mniejszy kod ÅºrÃ³dÅ‚owy stworzony
+w krÃ³tszym czasie.
 
-CherryPy ma ju¿ nieco ponad trzy lata i okaza³ siê byæ bardzo szybki i
-stabilny. Jest u¿ywany produkcyjnie przez wiele serwisów, od
-najprostszych do bardziej wymagaj±cych.
+CherryPy ma juÅ¼ nieco ponad trzy lata i okazaÅ‚ siÄ™ byÄ‡ bardzo szybki i
+stabilny. Jest uÅ¼ywany produkcyjnie przez wiele serwisÃ³w, od
+najprostszych do bardziej wymagajÄ…cych.
 
-I najwa¿niejsze - praca z CherryPy jest zabaw± :-)
+I najwaÅ¼niejsze - praca z CherryPy jest zabawÄ… :-)
 
 %package examples
 Summary:	Example files for CherryPy
-Summary(pl):	Pliki przyk³adów dla CherryPy
+Summary(pl.UTF-8):   Pliki przykÅ‚adÃ³w dla CherryPy
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 
 %description examples
 Example files for CherryPy.
 
-%description examples -l pl
-Pliki przyk³adów dla CherryPy.
+%description examples -l pl.UTF-8
+Pliki przykÅ‚adÃ³w dla CherryPy.
 
 %prep
 %setup -q -n %{fname}-%{version}
@@ -68,7 +68,6 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install -d $RPM_BUILD_ROOT%{py_sitescriptdir}/CherryPy-%{version}-py%{py_ver}.egg-info
 
 python setup.py install \
 	--root=$RPM_BUILD_ROOT \
@@ -79,13 +78,6 @@ rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/tutorial
 find $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/ -name \*.py | xargs rm -f
 
 cp -r cherrypy/tutorial $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
-echo 'Metadata-Version: 1.0
-Name: CherryPy
-Version: %{version}
-Summary: %{summary}
-Home-page: %{url}
-License: %{license}' > $RPM_BUILD_ROOT%{py_sitescriptdir}/CherryPy-%{version}-py%{py_ver}.egg-info/PKG-INFO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
