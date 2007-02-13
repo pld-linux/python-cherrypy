@@ -2,7 +2,7 @@
 %define		module	cherrypy
 #
 Summary:	A pythonic, object-oriented web development framework
-Summary(pl.UTF-8):   Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
+Summary(pl.UTF-8):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
 Name:		python-%{module}
 Version:	2.2.1
 Release:	3
@@ -48,7 +48,7 @@ I najważniejsze - praca z CherryPy jest zabawą :-)
 
 %package examples
 Summary:	Example files for CherryPy
-Summary(pl.UTF-8):   Pliki przykładów dla CherryPy
+Summary(pl.UTF-8):	Pliki przykładów dla CherryPy
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 
