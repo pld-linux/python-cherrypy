@@ -4,12 +4,12 @@
 Summary:	A pythonic, object-oriented web development framework
 Summary(pl.UTF-8):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
 Name:		python-%{module}
-Version:	3.0.0
+Version:	3.1.1
 Release:	1
 License:	BSD
 Group:		Development/Languages/Python
 Source0:	http://download.cherrypy.org/%{fname}/%{version}/%{fname}-%{version}.tar.gz
-# Source0-md5:	2065d19e79c9c1b30c9327509d2f3d0e
+# Source0-md5:	1803ebb8f930cea862ad4c9b2a910f0d
 #Patch0:		%{name}-autoreload.patch
 URL:		http://www.cherrypy.org
 BuildRequires:	python >= 1:2.5
