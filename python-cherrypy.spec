@@ -4,13 +4,13 @@
 Summary:	A pythonic, object-oriented web development framework
 Summary(pl.UTF-8):	Pythonowy, zorientowany obiektowo szkielet do tworzenia WWW
 Name:		python-%{module}
-Version:	2.2.1
-Release:	4
+Version:	3.0.0
+Release:	1
 License:	BSD
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/cherrypy/%{fname}-%{version}.tar.gz
-# Source0-md5:	14bf17b0706bc480342cb8fcfaed74cd
-Patch0:		%{name}-autoreload.patch
+Source0:	http://download.cherrypy.org/%{fname}/%{version}/%{fname}-%{version}.tar.gz
+# Source0-md5:	2065d19e79c9c1b30c9327509d2f3d0e
+#Patch0:		%{name}-autoreload.patch
 URL:		http://www.cherrypy.org
 BuildRequires:	python >= 1:2.5
 %pyrequires_eq	python-modules
@@ -60,7 +60,7 @@ Pliki przykładów dla CherryPy.
 
 %prep
 %setup -q -n %{fname}-%{version}
-%patch0 -p1
+#%patch0 -p1
 
 %build
 python setup.py build
@@ -84,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG.txt CHERRYPYTEAM.txt README.txt
+%doc README.txt
 %{py_sitescriptdir}/%{module}
 %{py_sitescriptdir}/CherryPy*
 
