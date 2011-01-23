@@ -13,6 +13,8 @@ Source0:	http://download.cherrypy.org/%{fname}/%{version}/%{fname}-%{version}.ta
 #Patch0:		%{name}-autoreload.patch
 URL:		http://www.cherrypy.org
 BuildRequires:	python >= 1:2.5
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-devel-tools
 BuildArch:	noarch
