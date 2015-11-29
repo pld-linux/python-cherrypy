@@ -12,6 +12,7 @@ Source0:	http://download.cherrypy.org/%{fname}/%{version}/%{fname}-%{version}.ta
 # Source0-md5:	15c60b3a91886b9a304d366fba93669c
 #Patch0:		%{name}-autoreload.patch
 URL:		http://www.cherrypy.org
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
