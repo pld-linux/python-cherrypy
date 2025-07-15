@@ -63,7 +63,7 @@ Pliki przykładów dla CherryPy.
 
 %prep
 %setup -q -n %{fname}-%{version}
-#%patch0 -p1
+#%%patch0 -p1
 
 %build
 %py_build
